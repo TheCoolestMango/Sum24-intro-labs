@@ -1,0 +1,15 @@
+name: Gather System Information
+run-name: ${{ github.actor }} is gathering the system information
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "---OS release---"
+      - run: cat /etc/os-release
+
+      - run: echo "---Processor---"
+      - run: lscpu
+
+      - run: echo "----RAM----"
+      - run: free -m
